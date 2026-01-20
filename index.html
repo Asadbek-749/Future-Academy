@@ -11,87 +11,257 @@
     <title>Asadbek</title>
   </head>
   <body>
-    <header >
-      <nav
-        class="container mx-auto  flex justify-between items-center py-2.5"
-      >
-        <!-- Logo -->
-        <div class="flex shrink-0">
-          <a href="./index.html">
-            <img src="./assets/images/svg/logo.svg" alt="logo" class="h-8" />
-          </a>
+    <header class="bg-white shadow-sm">
+      <!-- Desktop va Mobile uchun bitta nav -->
+      <nav class="container mx-auto px-4">
+        <!-- Tepada: Logo va Hamburger (har doim ko'rinadi) -->
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="shrink-0">
+            <a href="./index.html">
+              <img
+                src="./assets/images/svg/logo.svg"
+                alt="logo"
+                class="h-14.25"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop Nav Links Left -->
+          <ul class="hidden lg:flex items-center gap-10">
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-1.5 hover:text-blue-600 transition"
+              >
+                <span
+                  ><img
+                    src="./assets/images/svg/hamburger.svg"
+                    alt="list"
+                    class="w-5 h-5"
+                /></span>
+                <span>Все курсы</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-600 transition">Мероприятия</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-600 transition">Базы знаний</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-600 transition">Карьера</a>
+            </li>
+          </ul>
+
+          <!-- Desktop Nav Links Right -->
+          <ul class="hidden lg:flex items-center gap-10">
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-1.5 hover:text-blue-600 transition"
+              >
+                <img
+                  src="./assets/images/svg/location.svg"
+                  alt="location"
+                  class="w-5 h-5"
+                />
+                <span>Нижний Новгород</span>
+                <span
+                  ><img
+                    src="./assets/images/svg/bottom.svg"
+                    alt="bottom"
+                    class="w-4 h-4"
+                /></span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+88009503398" class="hover:text-blue-600 transition"
+                >8 800 950-33-98</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-1.5 hover:text-blue-600 transition"
+              >
+                <img
+                  src="./assets/images/svg/login.svg"
+                  alt="login"
+                  class="w-5 h-5"
+                />
+                <span>Войти</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Hamburger Button (faqat mobile'da) -->
+          <button
+            id="hamburgerBtn"
+            class="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <img
+              id="menuIcon"
+              src="./assets/images/svg/hamburger-nav.svg"
+              alt="menu"
+              class="w-7 h-7"
+            />
+          </button>
         </div>
 
+        <!-- Mobile Menu (pastdan chiqadi) -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200">
+          <div class="py-4">
+            <!-- Mobile Nav Links -->
+            <div class="space-y-1 mb-4">
+              <a
+                href="#"
+                class="flex items-center gap-2 px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
+              >
+                <img
+                  src="./assets/images/svg/hamburger.svg"
+                  alt="list"
+                  class="w-5 h-5"
+                />
+                <span>Все курсы</span>
+              </a>
+              <a
+                href="#"
+                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
+                >Об академии</a
+              >
+              <a
+                href="#"
+                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
+                >Мероприятия</a
+              >
+              <a
+                href="#"
+                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
+                >Новости</a
+              >
+              <a
+                href="#"
+                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
+                >База знаний</a
+              >
+              <a
+                href="#"
+                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
+                >Карьера</a
+              >
+              <a
+                href="#"
+                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
+                >Контакты</a
+              >
+            </div>
 
-       <!-- Desktop Nav Links Left -->
-      <ul class="hidden lg:flex items-center gap-10">
-        <li>
-          <a href="#" class="flex items-center gap-1.5 hover:text-blue-600 transition">
-            <span><img src="./assets/images/svg/hamburger.svg" alt="list" class="w-5 h-5"></span>
-            <span>Все курсы</span>
-          </a>
-        </li>
-        <li><a href="#" class="hover:text-blue-600 transition">Мероприятия</a></li>
-        <li><a href="#" class="hover:text-blue-600 transition">Базы знаний</a></li>
-        <li><a href="#" class="hover:text-blue-600 transition">Карьера</a></li>
-      </ul>
+            <!-- Mobile Bottom Links -->
+            <div class="space-y-2 pt-4">
+              <a
+                href="#"
+                class="flex items-center gap-2 px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
+              >
+                <img
+                  src="./assets/images/svg/location.svg"
+                  alt="location"
+                  class="w-5 h-5"
+                />
+                <span>Нижний Новгород</span>
+                <img
+                  src="./assets/images/svg/bottom.svg"
+                  alt="bottom"
+                  class="w-4 h-4"
+                />
+              </a>
 
-      <!-- Desktop Nav Links Right -->
-      <ul class="hidden lg:flex items-center gap-10">
-        <li>
-          <a href="#" class="flex items-center gap-1.5 hover:text-blue-600 transition">
-            <img src="./assets/images/svg/location.svg" alt="location" class="w-5 h-5">
-            <span>Нижний Новгород</span>
-            <span><img src="./assets/images/svg/bottom.svg" alt="bottom" class="w-4 h-4"></span>
-          </a>
-        </li>
-        <li><a href="tel:+88009503398" class="hover:text-blue-600 transition">8 800 950-33-98</a></li>
-        <li>
-          <a href="#" class="flex items-center gap-1.5 hover:text-blue-600 transition">
-            <img src="./assets/images/svg/login.svg" alt="login" class="w-5 h-5">
-            <span>Войти</span>
-          </a>
-        </li>
-      </ul>
+              <a href="#" class="flex items-center gap-2 px-3 py-2.5">
+                <img
+                  src="./assets/images/svg/login.svg"
+                  alt="login"
+                  class="w-5 h-5 brightness-0"
+                />
+                <span
+                  class="font-montserrat font-medium text-sm leading-none tracking-normal align-middle text-black"
+                  >Войти</span
+                >
+              </a>
 
-      <!-- Hamburger Button (Mobile) -->
-      <button id="hamburgerBtn" class="bg-[red] lg:hidden p-2 hover:bg-red-400 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <img src="./assets/images/svg/hamburger-nav.svg" alt="menu" class="w-7 h-7">
-      </button>
-    </div>
+              <a
+                href="tel:+88009503398"
+                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition font-semibold text-[#00093C]"
+              >
+                8 800 950-33-98
+              </a>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
-      <!-- Mobile Nav Links Left -->
-      <div class="space-y-3 mb-6">
-        <h3 class="text-sm font-semibold text-gray-400 uppercase">Меню</h3>
-        <a href="#" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition">
-          <img src="./assets/images/svg/hamburger.svg" alt="list" class="w-5 h-5">
-          <span>Все курсы</span>
-        </a>
-        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-gray-100 transition">Мероприятия</a>
-        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-gray-100 transition">Базы знаний</a>
-        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-gray-100 transition">Карьера</a>
-      </div>
+              <a
+                href="#"
+                class="flex items-center gap-2 px-3 py-2.5 font-montserrat font-medium text-sm leading-none tracking-normal align-middle text-black"
+              >
+                г. Москва, ул. Ленина, д. 50
+              </a>
 
-      <!-- Mobile Nav Links Right -->
-      <div class="space-y-3 border-t border-gray-200 pt-4">
-        <a href="#" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition">
-          <img src="./assets/images/svg/location.svg" alt="location" class="w-5 h-5">
-          <span>Нижний Новгород</span>
-          <img src="./assets/images/svg/bottom.svg" alt="bottom" class="w-4 h-4">
-        </a>
-        <a href="tel:+88009503398" class="block px-3 py-2 rounded-lg hover:bg-gray-100 transition font-semibold">
-          8 800 950-33-98
-        </a>
-        <a href="#" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
-          <img src="./assets/images/svg/login.svg" alt="login" class="w-5 h-5 brightness-0 invert">
-          <span>Войти</span>
-        </a>
-      </div>
-    </div>
+              <a
+                href="#"
+                class="flex items-center gap-2 px-3 py-2.5 font-montserrat font-medium text-sm leading-none tracking-normal align-middle text-black"
+              >
+                info@hodfutureacademy.ru
+              </a>
+            </div>
+
+            <!-- Mobile Bottom Social  -->
+            <div class="space-x-2 mt-6">
+              <ul class="flex shrink-0 items-center justify-between">
+                <li class="w-5.25 h-6.5">
+                  <a href="#"
+                    ><img src="./assets/images/svg/vkontact.svg" alt="vkontact"
+                  /></a>
+                </li>
+                <li class="w-5.25 h-6.5">
+                  <a href="#"
+                    ><img
+                      src="./assets/images/svg/instagram.svg"
+                      alt="instagram"
+                  /></a>
+                </li>
+                <li class="w-5.25 h-6.5">
+                  <a href="#"
+                    ><img src="./assets/images/svg/facebook.svg" alt="facebook"
+                  /></a>
+                </li>
+                <li class="w-5.25 h-6.5">
+                  <a href="#"
+                    ><img src="./assets/images/svg/youtube.svg" alt="youtube"
+                  /></a>
+                </li>
+                <li class="w-5.25 h-6.5">
+                  <a href="#"
+                    ><img src="./assets/images/svg/telegram.svg" alt="telegram"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
+    <main
+      class="relative w-full h-100 bg-[url('/assets/images/img/main-banner.png')] bg-center bg-cover flex items-center"
+    >
+      <!-- Destop Main  -->
+      <div class="hidden container mx-auto text-white">
+        <h1 class="text-3xl font-bold">Main banner</h1>
+        <p>Qisqa tavsif</p>
+      </div>
+      <!-- Mobile Main  -->
+      <div
+        class="w-full h-100  sm:bg-[url('/assets/images/img/main-banner.png')] sm:bg-right sm:bg-cover flex sm:items-center"
+      >
+       
+
+      </div>
+    </main>
     <script src="./src/main.js"></script>
   </body>
 </html>

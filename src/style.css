@@ -1,17 +1,60 @@
 @import "tailwindcss";
 
 .container {
-  max-width: 1180px;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
- @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+/* Mobile - Kichik (576px dan katta) */
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* Tablet - Portrait (768px dan katta) */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0 1.5rem;
+  }
+}
+
+/* Tablet - Landscape (992px dan katta) */
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    padding: 0 2rem;
+  }
+}
+
+/* Desktop (1024px dan katta) */
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+/* Desktop - Katta (1200px dan katta) */
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1180px;
+  }
+}
+
+/* Mobile menu animatsiyasi */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mobile-menu-show {
+  animation: slideUp 0.3s ease-out;
+}
