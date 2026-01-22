@@ -1,267 +1,189 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/src/style.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <title>Asadbek</title>
-  </head>
-  <body>
-    <header class="bg-white shadow-sm">
-      <!-- Desktop va Mobile uchun bitta nav -->
-      <nav class="container mx-auto px-4">
-        <!-- Tepada: Logo va Hamburger (har doim ko'rinadi) -->
-        <div class="flex justify-between items-center py-4">
-          <!-- Logo -->
-          <div class="shrink-0">
-            <a href="./index.html">
-              <img
-                src="./assets/images/svg/logo.svg"
-                alt="logo"
-                class="h-14.25"
-              />
-            </a>
-          </div>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asadbek - Responsive Navigation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4">
+            <!-- Top Navigation -->
+            <div class="flex justify-between items-center py-4">
+                
+                <!-- Logo -->
+                <div class="shrink-0">
+                    <a href="./index.html" class="flex items-center gap-3">
+                        <img src="/assets/images/svg/logo.svg" alt="logo">
+                    </a>
+                </div>
 
-          <!-- Desktop Nav Links Left -->
-          <ul class="hidden lg:flex items-center gap-10">
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-1.5 hover:text-blue-600 transition"
-              >
-                <span
-                  ><img
-                    src="./assets/images/svg/hamburger.svg"
-                    alt="list"
-                    class="w-5 h-5"
-                /></span>
-                <span>Все курсы</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-blue-600 transition">Мероприятия</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-blue-600 transition">Базы знаний</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-blue-600 transition">Карьера</a>
-            </li>
-          </ul>
+                <!-- Desktop Navigation - Left -->
+                <ul class="hidden lg:flex items-center gap-8">
+                    <li>
+                        <a href="#" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors font-medium">
+                            <i class="fas fa-bars text-sm"></i>
+                            <span>Все курсы</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Мероприятия</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Базы знаний</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Карьера</a>
+                    </li>
+                </ul>
 
-          <!-- Desktop Nav Links Right -->
-          <ul class="hidden lg:flex items-center gap-10">
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-1.5 hover:text-blue-600 transition"
-              >
-                <img
-                  src="./assets/images/svg/location.svg"
-                  alt="location"
-                  class="w-5 h-5"
-                />
-                <span>Нижний Новгород</span>
-                <span
-                  ><img
-                    src="./assets/images/svg/bottom.svg"
-                    alt="bottom"
-                    class="w-4 h-4"
-                /></span>
-              </a>
-            </li>
-            <li>
-              <a href="tel:+88009503398" class="hover:text-blue-600 transition"
-                >8 800 950-33-98</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-1.5 hover:text-blue-600 transition"
-              >
-                <img
-                  src="./assets/images/svg/login.svg"
-                  alt="login"
-                  class="w-5 h-5"
-                />
-                <span>Войти</span>
-              </a>
-            </li>
-          </ul>
+                <!-- Desktop Navigation - Right -->
+                <ul class="hidden lg:flex items-center gap-8">
+                    <li>
+                        <a href="#" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors font-medium">
+                            <i class="fas fa-map-marker-alt text-sm"></i>
+                            <span>Нижний Новгород</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+88009503398" class="text-gray-700 hover:text-blue-600 transition-colors font-semibold">
+                            8 800 950-33-98
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md">
+                            <i class="fas fa-user text-sm"></i>
+                            <span>Войти</span>
+                        </a>
+                    </li>
+                </ul>
 
-          <!-- Hamburger Button (faqat mobile'da) -->
-          <button
-            id="hamburgerBtn"
-            class="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <img
-              id="menuIcon"
-              src="./assets/images/svg/hamburger-nav.svg"
-              alt="menu"
-              class="w-7 h-7"
-            />
-          </button>
-        </div>
-
-        <!-- Mobile Menu (pastdan chiqadi) -->
-        <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200">
-          <div class="py-4">
-            <!-- Mobile Nav Links -->
-            <div class="space-y-1 mb-4">
-              <a
-                href="#"
-                class="flex items-center gap-2 px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
-              >
-                <img
-                  src="./assets/images/svg/hamburger.svg"
-                  alt="list"
-                  class="w-5 h-5"
-                />
-                <span>Все курсы</span>
-              </a>
-              <a
-                href="#"
-                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
-                >Об академии</a
-              >
-              <a
-                href="#"
-                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
-                >Мероприятия</a
-              >
-              <a
-                href="#"
-                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
-                >Новости</a
-              >
-              <a
-                href="#"
-                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
-                >База знаний</a
-              >
-              <a
-                href="#"
-                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
-                >Карьера</a
-              >
-              <a
-                href="#"
-                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
-                >Контакты</a
-              >
-            </div>
-
-            <!-- Mobile Bottom Links -->
-            <div class="space-y-2 pt-4">
-              <a
-                href="#"
-                class="flex items-center gap-2 px-3 py-2.5 rounded-lg hover:bg-gray-100 transition"
-              >
-                <img
-                  src="./assets/images/svg/location.svg"
-                  alt="location"
-                  class="w-5 h-5"
-                />
-                <span>Нижний Новгород</span>
-                <img
-                  src="./assets/images/svg/bottom.svg"
-                  alt="bottom"
-                  class="w-4 h-4"
-                />
-              </a>
-
-              <a href="#" class="flex items-center gap-2 px-3 py-2.5">
-                <img
-                  src="./assets/images/svg/login.svg"
-                  alt="login"
-                  class="w-5 h-5 brightness-0"
-                />
-                <span
-                  class="font-montserrat font-medium text-sm leading-none tracking-normal align-middle text-black"
-                  >Войти</span
+                <!-- Mobile Hamburger Button -->
+                <button 
+                    id="hamburgerBtn" 
+                    class="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    aria-label="Toggle menu"
                 >
-              </a>
-
-              <a
-                href="tel:+88009503398"
-                class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 transition font-semibold text-[#00093C]"
-              >
-                8 800 950-33-98
-              </a>
-
-              <a
-                href="#"
-                class="flex items-center gap-2 px-3 py-2.5 font-montserrat font-medium text-sm leading-none tracking-normal align-middle text-black"
-              >
-                г. Москва, ул. Ленина, д. 50
-              </a>
-
-              <a
-                href="#"
-                class="flex items-center gap-2 px-3 py-2.5 font-montserrat font-medium text-sm leading-none tracking-normal align-middle text-black"
-              >
-                info@hodfutureacademy.ru
-              </a>
+                    <i id="menuIcon" class="fas fa-bars text-2xl text-gray-700"></i>
+                </button>
             </div>
 
-            <!-- Mobile Bottom Social  -->
-            <div class="space-x-2 mt-6">
-              <ul class="flex shrink-0 items-center justify-between">
-                <li class="w-5.25 h-6.5">
-                  <a href="#"
-                    ><img src="./assets/images/svg/vkontact.svg" alt="vkontact"
-                  /></a>
-                </li>
-                <li class="w-5.25 h-6.5">
-                  <a href="#"
-                    ><img
-                      src="./assets/images/svg/instagram.svg"
-                      alt="instagram"
-                  /></a>
-                </li>
-                <li class="w-5.25 h-6.5">
-                  <a href="#"
-                    ><img src="./assets/images/svg/facebook.svg" alt="facebook"
-                  /></a>
-                </li>
-                <li class="w-5.25 h-6.5">
-                  <a href="#"
-                    ><img src="./assets/images/svg/youtube.svg" alt="youtube"
-                  /></a>
-                </li>
-                <li class="w-5.25 h-6.5">
-                  <a href="#"
-                    ><img src="./assets/images/svg/telegram.svg" alt="telegram"
-                  /></a>
-                </li>
-              </ul>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="lg:hidden border-t border-gray-200 hidden">
+                <div class="py-4">
+                    
+                    <!-- Mobile Navigation Links -->
+                    <div class="space-y-1 mb-4">
+                        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-bars text-gray-600"></i>
+                            <span class="font-medium text-gray-700">Все курсы</span>
+                        </a>
+                        <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-gray-700">
+                            Об академии
+                        </a>
+                        <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-gray-700">
+                            Мероприятия
+                        </a>
+                        <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-gray-700">
+                            Новости
+                        </a>
+                        <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-gray-700">
+                            База знаний
+                        </a>
+                        <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-gray-700">
+                            Карьера
+                        </a>
+                        <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-gray-700">
+                            Контакты
+                        </a>
+                    </div>
+
+                    <!-- Mobile Bottom Info -->
+                    <div class="space-y-3 pt-4 border-t border-gray-200">
+                        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="font-medium ">Нижний Новгород</span>
+                            <i class="fas fa-chevron-down text-xs text-gray-500 ml-auto"></i>
+                        </a>
+
+                        <a href="#" class="flex items-center gap-3 px-4 py-3">
+                            <i class="fas fa-user"></i>
+                            <span class="font-medium">Войти</span>
+                        </a>
+
+                        <a href="tel:+88009503398" class="block px-4 py-3 font-bold text-blue-600">
+                            8 800 950-33-98
+                        </a>
+
+                        <div class="px-4 py-2 text-sm text-gray-600">
+                            <p class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-map-marker-alt text-xs"></i>
+                                г. Москва, ул. Ленина, д. 50
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i class="fas fa-envelope text-xs"></i>
+                                info@hodfutureacademy.ru
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-gray-200">
+                        <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">
+                            <i class="fab fa-vk text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-pink-600 transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">
+                            <i class="fab fa-youtube text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">
+                            <i class="fab fa-telegram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </nav>
+        </nav>
     </header>
-    <main
-      class="relative w-full h-100 bg-[url('/assets/images/img/main-banner.png')] bg-center bg-cover flex items-center"
-    >
-      <!-- Destop Main  -->
-      <div class="hidden container mx-auto text-white">
-        <h1 class="text-3xl font-bold">Main banner</h1>
-        <p>Qisqa tavsif</p>
-      </div>
-      <!-- Mobile Main  -->
-      <div
-        class="w-full h-100  sm:bg-[url('/assets/images/img/main-banner.png')] sm:bg-right sm:bg-cover flex sm:items-center"
-      >
-       
 
-      </div>
-    </main>
-    <script src="./src/main.js"></script>
-  </body>
+    <!-- Main Hero Section -->
+    <main class="hero-bg relative flex items-center justify-center">
+        <div class="container mx-auto px-4 py-20 sm:py-32">
+            <div class="hero-content max-w-3xl mx-auto text-center text-white">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Добро пожаловать в<br />
+                    <span class="text-blue-300">Академию будущего</span>
+                </h1>
+                <p class="text-lg sm:text-xl mb-8 text-blue-100 leading-relaxed">
+                    Изучайте новые навыки, развивайтесь профессионально и достигайте своих целей вместе с нами
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="px-8 py-4 bg-white text-blue-600 rounded-lg font-bold hover:bg-blue-50 transition-colors shadow-lg">
+                        Начать обучение
+                    </a>
+                    <a href="#" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-bold hover:bg-white hover:text-blue-600 transition-colors">
+                        Узнать больше
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative elements -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="rgb(249 250 251)"/>
+            </svg>
+        </div>
+    </main> 
+    <script src="/src/main.js"></script>
+</body>
 </html>

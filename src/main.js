@@ -2,46 +2,80 @@ const hamburgerBtn = document.getElementById("hamburgerBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const menuIcon = document.getElementById("menuIcon");
 
-// let isOpen = false;
-// hamburgerBtn.addEventListener("click", (e) => {
-//   e.stopPropagation();
-//   isOpen = !isOpen;
-
-//   if (isOpen) {
-//     mobileMenu.classList.remove("hidden");
-//     mobileMenu.classList.add("mobile-menu-show");
-//     hamburgerBtn.innerHTML =
-//       '<img src="./assets/images/svg/close-burger.svg" alt="menu" class="w-7 h-7">';
-//   } else {
-//     mobileMenu.classList.add("hidden");
-//     mobileMenu.classList.remove("mobile-menu-show");
-//     hamburgerBtn.innerHTML =
-//       '<img src="./assets/images/svg/hamburger-nav.svg" alt="menu" class="w-7 h-7">';
-//   }
-// });
-
 let isOpen = false;
 
-const toggleMenu = (e) => {
-  e.preventDefault();
+hamburgerBtn.addEventListener("click", (e) => {
   e.stopPropagation();
-
   isOpen = !isOpen;
 
-  mobileMenu.classList.toggle("hidden");
+  if (isOpen) {
+    // Menu ochish
+    mobileMenu.classList.remove("hidden");
+    mobileMenu.classList.remove("hide");
+    mobileMenu.classList.add("show");
+    menuIcon.classList.remove("fa-bars");
+    menuIcon.classList.add("fa-times");
+  } else {
+    // Menu yopish
+    mobileMenu.classList.remove("show");
+    mobileMenu.classList.add("hide");
+    menuIcon.classList.remove("fa-times");
+    menuIcon.classList.add("fa-bars");
 
-  hamburgerBtn.innerHTML = isOpen
-    ? '<img src="./assets/images/svg/close-burger.svg" class="w-7 h-7 pointer-events-none">'
-    : '<img src="./assets/images/svg/hamburger-nav.svg" class="w-7 h-7 pointer-events-none">';
-};
+    // Animatsiya tugagandan keyin hidden qo'shish
+    setTimeout(() => {
+      if (!isOpen) {
+        mobileMenu.classList.add("hidden");
+      }
+    }, 300);
+  }
+});
 
-hamburgerBtn.addEventListener("click", toggleMenu);
-hamburgerBtn.addEventListener("touchstart", toggleMenu);
-
+// Window resize bo'lganda
 window.addEventListener("resize", () => {
   if (window.innerWidth >= 1024) {
     mobileMenu.classList.add("hidden");
-    mobileMenu.classList.remove("mobile-menu-show");
+    mobileMenu.classList.remove("show", "hide");
+    menuIcon.classList.remove("fa-times");
+    menuIcon.classList.add("fa-bars");
     isOpen = false;
   }
+});
+
+// Menyu tashqarisiga bosilganda yopish
+document.addEventListener("click", (e) => {
+  if (
+    isOpen &&
+    !mobileMenu.contains(e.target) &&
+    !hamburgerBtn.contains(e.target)
+  ) {
+    isOpen = false;
+    mobileMenu.classList.remove("show");
+    mobileMenu.classList.add("hide");
+    menuIcon.classList.remove("fa-times");
+    menuIcon.classList.add("fa-bars");
+
+    setTimeout(() => {
+      if (!isOpen) {
+        mobileMenu.classList.add("hidden");
+      }
+    }, 300);
+  }
+});
+
+// Smooth scroll uchun
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const href = this.getAttribute("href");
+    if (href !== "#") {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  });
 });
